@@ -36,3 +36,4 @@ jobs:
           heroku_email: flacson98@gmail.com
           healthcheck: 'https://arcane-falls-67286.herokuapp.com/health'
           checkstring: 'ok'
+          rollbackonhealthcheckfailed: true
