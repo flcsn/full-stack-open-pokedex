@@ -9,8 +9,7 @@
     "test": "jest",
     "test:e2e": "cypress run --headed --browser chrome \"cypress/integration/**\"",
     "eslint": "eslint \"./**/*.{js,jsx}\"",
-    "build": "webpack --mode production",
-    "postinstall": "npm run build"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
