@@ -25,7 +25,6 @@ jobs:
       - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
-        if: contains("$COMMIT_MESSAGES", "try")
         run: echo "$COMMIT_MESSAGES"
       # should run
       - if: contains(toJson(github.event.commits.*.message), "test")
