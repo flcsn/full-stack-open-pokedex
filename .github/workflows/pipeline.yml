@@ -35,7 +35,7 @@ jobs:
           echo "${{ github.event.commits.*.message }}"
       # should run
       - if: contains(toJson(github.event.commits.*.message), 'hmtk5')
-        name: test contains hmtk5
+        name: test contains hmtk5   
         run: |
           echo "hmtk5"
           echo "${{ toJson(github.event.commits.*.message) }}"
