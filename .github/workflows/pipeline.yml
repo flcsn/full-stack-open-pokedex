@@ -32,7 +32,7 @@ jobs:
           echo "use toJSON"
           echo "${{ toJson(github.event.commits.*.message) }}"
           echo "${{ github.event.commits.*.message }}"
-      - if: contains(${{ github.event.commits.*.message }}, 'test')
+      - if: contains(${{ github.event.commits.*.message }}, 'try')
         name: test contains w/o JSON
         run: |
           echo "dont use toJSON"
