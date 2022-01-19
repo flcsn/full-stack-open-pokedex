@@ -24,16 +24,17 @@ jobs:
         run: echo "$COMMITS"
       - name: commit messages
         env:
-          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          COMMIT_MESSAGES: ${{ toJson(github.event.commits.message) }}
         run: echo "$COMMIT_MESSAGES"
       - if: contains(${{ toJson(github.event.commits.*.message) }}, 'test')
-        name: test contains w/ JSON
+        name: test contains test
         run: |
-          echo "use toJSON"
-          echo "${{ toJson(github.event.commits.*.message) }}"
+          echo "test"
+          echo "${{ toJson(github.event.commits.message) }}"
+          echo "${{ github.event.commits.message }}"
+      - if: contains(${{ toJson(github.event.commits.message) }}, 'try')
+        name: test contains try
+        run: |
+          echo "try"
           echo "${{ github.event.commits.*.message }}"
-      - if: contains(${{ github.event.commits.*.message }}, 'try')
-        name: test contains w/o JSON
-        run: |
-          echo "dont use toJSON"
-          echo ${{ github.event.commits.*.message }}
+          echo "${{ github.event.commits.message }}"
