@@ -28,14 +28,14 @@ jobs:
         if: contains("$COMMIT_MESSAGES", "try")
         run: echo "$COMMIT_MESSAGES"
       # should run
-      - if: ${{ contains(toJson(github.event.commits.*.message), "test") }}
+      - if: contains(toJson(github.event.commits.*.message), "test")
         name: test contains test
         run: |
           echo "test"
           echo "${{ toJson(github.event.commits.*.message) }}"
           echo "${{ github.event.commits.*.message }}"
       # should not run
-      - if: ${{ contains(toJson(github.event.commits.*.message), "hmtk5") }}
+      - if: contains(toJson(github.event.commits.*.message), "hmtk5")
         name: test contains hmtk5
         run: |
           echo "hmtk5"
