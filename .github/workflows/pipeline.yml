@@ -31,7 +31,7 @@ jobs:
         name: test contains test
         run: |
           echo "test"
-          echo "${{ toJson(github.event.commits.*.message }}"
+          echo "${{ toJson(github.event.commits.*.message) }}"
           echo "${{ github.event.commits.*.message }}"
       # should not run
       - if: contains(${{ github.event.commits.*.message }}, 'hmtk5')
